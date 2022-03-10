@@ -1,10 +1,11 @@
-const inquirer = require("./node_modules");
+const inquirer = require('inquirer');
+const {questions} = require("./questions");
 
 class pokemon {
     constructor(name){
         this._name = name;
         this._health = 100;
-        this._realtionship = 5;
+        this._relationship = 5;
     }
 
     get name(){
@@ -15,8 +16,8 @@ class pokemon {
         return this._health;
     }
 
-    get realtionship(){
-        return this._realtionship;
+    get relationship(){
+        return this._relationship;
     }
 
     set name(name){
@@ -27,11 +28,15 @@ class pokemon {
       this._health = health
     }
 
-    set realtionship(relationship){
-      this._realtionship = relationship
+    set relationship(relationship){
+      this._relationship = relationship
     }
 
     eat() {
       // Do stuff plz        
     }
+}
+
+module.exports = {
+  pokemon,
 }

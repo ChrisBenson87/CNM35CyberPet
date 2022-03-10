@@ -21,168 +21,195 @@ const questions = {
             },
         ],
     },
+    menuChoices:{
+        type: "list",
+        name: "GameMenu",
+        output: `What would you like to do with ${this.name}?`,
+        choices:[
+            {
+                key: "1",
+                menu: "Check Status",
+                value: "status",
+            },
+            {
+                key: "2",
+                menu: "Nourish your Pokemon",
+                value: "nourish",
+            },
+            {
+                key: "3",
+                menu: "Play with your Pokemon",
+                value: "play",
+            },
+            {
+                key: "4",
+                menu: "Quit Game",
+                value: "quit",
+            },
+        ]
+    },
     bulbasaurMenu:{
         type: "list",
         name: "Bulbasaur's Menu",
-        output: `What would you like to treat ${this.name}?`,
+        output: `What would you like to give ${this.name}?`,
         choices: [
             {
                 key: '1',
-                option: 'Grass: Health + 4, Relationship + 2',
+                option: 'Grass',
                 value: 'grass'
             },
             {
                 key: '2',
-                option: 'Bugs: Health + 2, Relationship - 3',
+                option: 'Bugs',
                 value: 'bugs'
             },
             {
                 key: '3',
-                option: 'Water: Health + 3, Relationship + 3',
+                option: 'Water',
                 value: 'water'
             },
             {
                 key: '4',
-                option: 'Sunshine: Health + 2, Relationship + 5',
+                option: 'Sunshine',
                 value: 'sunshine'
             }
         ]
     },
     bulbasaurActivities:{
         type: "list",
-        name: "Bulbasaur's Activites",
-        output: `What would you like to do ${this.name}?`,
+        name: "Bulbasaur's Activities",
+        output: `How would you like to play with ${this.name}?`,
         choices: [
             {
                 key: '1',
-                option: 'Grass: Health - 3 Relationship + 2', //need to remove stat stuff
-                value: 'grass'
+                option: 'Swim', 
+                value: 'swim'
             },
             {
                 key: '2',
-                option: 'Bugs: Health + 2, Relationship + 1',
-                value: 'bugs'
+                option: 'Play Catch',
+                value: 'playCatch'
             },
             {
                 key: '3',
-                option: 'Water: Health + 3, Relationship + 3',
-                value: 'water'
+                option: 'Meditate',
+                value: 'meditate'
             },
             {
                 key: '4',
-                option: 'Sunshine: Health + 2, Relationship + 5',
-                value: 'sunshine'
+                option: 'Gardening',
+                value: 'gardening'
             }
         ]
     },
-    CharmanderMenu:{
+    charmanderMenu:{
         type: "list",
-        name: "Bulbasaur's Menu",
-        output: `What would you like to treat ${this.name}?`,
+        name: "Charmander's Menu",
+        output: `What would you like to give ${this.name}?`,
         choices: [
             {
                 key: '1',
-                option: 'Grass: Health + 4, Relationship + 2',
-                value: 'grass'
+                option: 'Coal',
+                value: 'coal'
             },
             {
                 key: '2',
-                option: 'Bugs: Health + 2, Relationship - 3',
-                value: 'bugs'
+                option: 'Wood',
+                value: 'wood'
             },
             {
                 key: '3',
-                option: 'Water: Health + 3, Relationship + 3',
-                value: 'water'
+                option: 'Gasoline',
+                value: 'gasoline'
             },
             {
                 key: '4',
-                option: 'Sunshine: Health + 2, Relationship + 5',
-                value: 'sunshine'
+                option: 'Fire Lighter',
+                value: 'fireLighter'
             }
         ]
     },
-    CharmanderActivities:{
+    charmanderActivities:{
         type: "list",
-        name: "Bulbasaur's Activites",
-        output: `What would you like to do ${this.name}?`,
+        name: "Charmander's Activities",
+        output: `How would you like to play with ${this.name}?`,
         choices: [
             {
                 key: '1',
-                option: 'Grass: Health - 3 Relationship + 2', //need to remove stat stuff
-                value: 'grass'
+                option: 'Skateboard', 
+                value: 'skateboard'
             },
             {
                 key: '2',
-                option: 'Bugs: Health + 2, Relationship + 1',
-                value: 'bugs'
+                option: 'Swimming',
+                value: 'swimming'  //might need to change value name if this interferes with bulbactivities
             },
             {
                 key: '3',
-                option: 'Water: Health + 3, Relationship + 3',
-                value: 'water'
+                option: 'Play Football',
+                value: 'playFootball'
             },
             {
                 key: '4',
-                option: 'Sunshine: Health + 2, Relationship + 5',
-                value: 'sunshine'
+                option: 'Play With Fireworks',
+                value: 'fireworks'
             }
         ]
     },
-    SquirtleMenu:{
+    squirtleMenu:{
         type: "list",
-        name: "Bulbasaur's Menu",
-        output: `What would you like to treat ${this.name}?`,
+        name: "Squirtle's Menu",
+        output: `What would you like to give ${this.name}?`,
         choices: [
             {
                 key: '1',
-                option: 'Grass: Health + 4, Relationship + 2',
-                value: 'grass'
+                option: 'Tuna Steak',
+                value: 'tuna'
             },
             {
                 key: '2',
-                option: 'Bugs: Health + 2, Relationship - 3',
-                value: 'bugs'
-            },
-            {
-                key: '3',
-                option: 'Water: Health + 3, Relationship + 3',
+                option: 'Water',
                 value: 'water'
             },
             {
+                key: '3',
+                option: 'Lobster',
+                value: 'lobster'
+            },
+            {
                 key: '4',
-                option: 'Sunshine: Health + 2, Relationship + 5',
-                value: 'sunshine'
+                option: 'Plankton',
+                value: 'plankton'
             }
         ]
     },
-    SquirtleActivities:{
+    squirtleActivities:{
         type: "list",
-        name: "Bulbasaur's Activites",
-        output: `What would you like to do ${this.name}?`,
+        name: "Squirtle's Activities",
+        output: `How would you like to play with ${this.name}?`,
         choices: [
             {
                 key: '1',
-                option: 'Grass: Health - 3 Relationship + 2', //need to remove stat stuff
-                value: 'grass'
+                option: 'Sun Bathing', 
+                value: 'sun'
             },
             {
                 key: '2',
-                option: 'Bugs: Health + 2, Relationship + 1',
-                value: 'bugs'
+                option: 'Swimming',
+                value: 'swimming'
             },
             {
                 key: '3',
-                option: 'Water: Health + 3, Relationship + 3',
-                value: 'water'
+                option: 'Have a Nap',
+                value: 'nap'
             },
             {
                 key: '4',
-                option: 'Sunshine: Health + 2, Relationship + 5',
-                value: 'sunshine'
+                option: 'Play Water Polo',
+                value: 'polo'
             }
         ]
-    }
+    },
 }
 
 
