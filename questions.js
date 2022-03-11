@@ -1,8 +1,8 @@
 const questions = {
     choosePokemon:{
         type: "list",
-        name: "Pokemon",
-        output: "Choose your Pokemon!",
+        name: "pokemonSpecies",
+        message: "Choose your Pokemon!",
         choices: [
             {
                 key: "1",
@@ -24,7 +24,7 @@ const questions = {
     menuChoices:{
         type: "list",
         name: "GameMenu",
-        output: `What would you like to do with ${this.name}?`,
+        message: `What would you like to do with?`,
         choices:[
             {
                 key: "1",
@@ -51,7 +51,7 @@ const questions = {
     bulbasaurMenu:{
         type: "list",
         name: "Bulbasaur's Menu",
-        output: `What would you like to give ${this.name}?`,
+        message: `What would you like to give?`,
         choices: [
             {
                 key: '1',
@@ -78,7 +78,7 @@ const questions = {
     bulbasaurActivities:{
         type: "list",
         name: "Bulbasaur's Activities",
-        output: `How would you like to play with ${this.name}?`,
+        message: `How would you like to play with?`,
         choices: [
             {
                 key: '1',
@@ -105,7 +105,7 @@ const questions = {
     charmanderMenu:{
         type: "list",
         name: "Charmander's Menu",
-        output: `What would you like to give ${this.name}?`,
+        message: `What would you like to give?`,
         choices: [
             {
                 key: '1',
@@ -132,7 +132,7 @@ const questions = {
     charmanderActivities:{
         type: "list",
         name: "Charmander's Activities",
-        output: `How would you like to play with ${this.name}?`,
+        message: `How would you like to play with?`,
         choices: [
             {
                 key: '1',
@@ -159,7 +159,7 @@ const questions = {
     squirtleMenu:{
         type: "list",
         name: "Squirtle's Menu",
-        output: `What would you like to give ${this.name}?`,
+        message: `What would you like to give?`,
         choices: [
             {
                 key: '1',
@@ -186,7 +186,7 @@ const questions = {
     squirtleActivities:{
         type: "list",
         name: "Squirtle's Activities",
-        output: `How would you like to play with ${this.name}?`,
+        message: `How would you like to play with?`,
         choices: [
             {
                 key: '1',

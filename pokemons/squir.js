@@ -13,8 +13,8 @@ class Squirtle extends pokemon{
 
         switch (menu) {
             case "grass":
-                this.health(+4);
-                this.relationship(+2);
+                this.health(this.health+4);
+                this.relationship(this.relationship+2);
                 break;
             case "bugs":
                 this.health(this.health+2);
@@ -35,8 +35,8 @@ class Squirtle extends pokemon{
         
         switch (activities) {
             case "grass":
-                this.health(+4);
-                this.relationship(+2);
+                this.health(this.health+4);
+                this.relationship(this.relationship+2);
                 break;
             case "bugs":
                 this.health(this.health+2);

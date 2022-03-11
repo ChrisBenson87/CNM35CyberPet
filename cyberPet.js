@@ -1,47 +1,51 @@
 const inquirer = require('inquirer');
 const {questions} = require("./questions");
 
-const {Bulbasaur} = require("./pokemons/bulb");
-const {Charmander} = require("./pokemons/char");
-const {Squirtle} = require("./pokemons/squir");
-
-let userPokemon;
+const { Bulbasaur } = require("./pokemons/bulb");
+const { Charmander } = require("./pokemons/char");
+const { Squirtle } = require("./pokemons/squir");
 
 async function startGame () {
-    const {choosePokemon} = await inquirer.prompt(questions.choosePokemon);
+    let userPokemon;
 
-    const {pokemonName} = await inquirer.prompt({
+    const { pokemonSpecies } = await inquirer.prompt(questions.choosePokemon);
+
+    const { pokemonName } = await inquirer.prompt({
         type: "input",
         name: "pokemonName",
-        output: "Name your pokemon!",
+        message: "Name your pokemon!",
     });
 
-    if (choosePokemon === "bulbasaur") userPokemon = new Bulbasaur(pokemonName);
-    else if (choosePokemon === "charmander") userPokemon = new Charmander(pokemonName);
-    else if (choosePokemon === "squirtle") userPokemon = new Squirtle(pokemonName);
+    if (pokemonSpecies === 'bulbasaur') userPokemon = new Bulbasaur(pokemonName);
+    else if (pokemonSpecies === 'charmander') userPokemon = new Charmander(pokemonName);
+    else if (pokemonSpecies === 'squirtle') userPokemon = new Squirtle(pokemonName);
 
     gameMenu();
 };
 
-async function gameMenu () {
+async function gameMenu(userPokemon) {
 
-    const {menu} = await inquirer.prompt(questions.menuChoices);
+    this.health -= 5;
+    this.relationship -= 5;
 
-    if(menu === "nourish") await userPokemon.nourish();
-    else if(menu === "play") await userPokemon.activities();
+    const { GameMenu } = await inquirer.prompt(questions.menuChoices);
+
+    switch (GameMenu) {
+        case "status":
+            await userPokemon.status();
+            break;
+        case "nourish":
+            await userPokemon.nourish();
+            break;
+        case "play":
+            await userPokemon.activities();
+    }
+
+    gameMenu();
 };
 
+// async function gameOver(){
 
-    // if(realtionship = 100){
-    //     console.log("Your pokemon is evolving");
-    // }
-
-    // if(health = 0){
-    //     console.log("Your pokemon fainted");
-    // }
-    
-    // if(realtionship = 0){
-    //     console.log("Your pokemon ran-away");
-    // }
+// }
 
 startGame();

@@ -9,46 +9,54 @@ class Bulbasaur extends pokemon{
     }
 
     async nourish(){
-        const {nourishMenu} = await inquirer.prompt(questions.bulbasaurMenu);
+        const { nourish } = await inquirer.prompt(questions.bulbasaurMenu);
         
-        switch (nourishMenu) {
+        switch (nourish) {
             case "grass":
-                this.health(this.health+4);
-                this.relationship(this.relationship+2);
+                this.health += 4;
+                this.relationship += 2;
+                console.log(`Your ${this.name} seemed to like that`);
                 break;
             case "bugs":
-                this.health(this.health+2);
-                this.relationship(this.relationship-3);
+                this.health += 2;
+                this.relationship -= 3;
+                console.log(`Your ${this.name} seems healthier but didn't really like that`);
                 break;
             case "water":
-                this.health(this.health+3);
-                this.relationship(this.relationship+3);
+                this.health += 3;
+                this.relationship += 3;
+                console.log(`Your ${this.name} somewhat liked that`);
                 break;
             case "sunshine":
-                this.health(this.health+4);
-                this.relationship(this.relationship+2);
+                this.health += 4;
+                this.relationship += 2;
+                console.log(`Your ${this.name} really liked that`);
         }
     }
 
     async activities(){
-        const {activities} = await inquirer.prompt(questions.bulbasaurActivities);
+        const { activities } = await inquirer.prompt(questions.bulbasaurActivities);
 
         switch (activities) {
-            case "grass":
-                this.health(this.health+4);
+            case "swim":
+                this.health(this.health-3);
+                this.relationship(this.relationship-5);
+                console.log(`Your ${this.name} didn't seem to like that`);
+                break;
+            case "playCatch":
+                this.health(this.health-5);
                 this.relationship(this.relationship+2);
+                console.log(`Your ${this.name} didn't seemed to like that`);
                 break;
-            case "bugs":
-                this.health(this.health+2);
-                this.relationship(this.relationship-3);
-                break;
-            case "water":
+            case "meditate":
                 this.health(this.health+3);
-                this.relationship(this.relationship+3);
+                this.relationship(this.relationship+1);
+                console.log(`Your ${this.name} found that okay`);
                 break;
-            case "sunshine":
-                this.health(this.health+4);
+            case "gardening":
+                this.health(this.health-5);
                 this.relationship(this.relationship+2);
+                console.log(`Your ${this.name} really liked that`);
         }
     }
 }
